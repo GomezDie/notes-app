@@ -34,6 +34,19 @@ export function addNote(text: string): Note {
   return note;
 }
 
+export function updateNote(id: string, text: string): Note | null {
+  const trimmed = text.trim();
+  if (!trimmed) {
+    throw new Error("Note text is required");
+  }
+  const note = store.notes.find((n) => n.id === id);
+  if (!note) {
+    return null;
+  }
+  note.text = trimmed;
+  return note;
+}
+
 export function removeNote(id: string): boolean {
   const before = store.notes.length;
   store.notes = store.notes.filter((n) => n.id !== id);

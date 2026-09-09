@@ -4,6 +4,7 @@ import {
   addNote,
   listNotes,
   removeNote,
+  updateNote,
 } from "./notes-store";
 
 beforeEach(() => {
@@ -39,5 +40,27 @@ describe("notes-store", () => {
     expect(removeNote(note.id)).toBe(true);
     expect(listNotes()).toHaveLength(0);
     expect(removeNote(note.id)).toBe(false);
+  });
+
+  it("updates a note's text and returns the updated note", () => {
+    const note = addNote("draft");
+    const updated = updateNote(note.id, "final");
+    expect(updated?.id).toBe(note.id);
+    expect(updated?.text).toBe("final");
+    expect(listNotes()[0].text).toBe("final");
+  });
+
+  it("trims whitespace when updating", () => {
+    const note = addNote("draft");
+    expect(updateNote(note.id, "  spaced  ")?.text).toBe("spaced");
+  });
+
+  it("throws when updating with empty text", () => {
+    const note = addNote("draft");
+    expect(() => updateNote(note.id, "   ")).toThrow(/required/);
+  });
+
+  it("returns null when updating a missing id", () => {
+    expect(updateNote("nope", "whatever")).toBeNull();
   });
 });
