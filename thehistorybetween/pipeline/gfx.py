@@ -182,6 +182,56 @@ class KenBurns:
         return self.src.resize((W, H), Image.BILINEAR, box=(x, y, x + cw, y + ch)).convert("RGBA")
 
 
+class VideoClip:
+    """An AI/stock clip decoded once to 1920x1080 JPEG frames at FPS.
+
+    frame(t, scene_dur) plays the clip, slowed down (frame-blended) when the
+    scene is longer than the clip, never below min_speed; past the end it holds
+    on the last frame with a gentle push-in so the shot never freezes dead."""
+
+    def __init__(self, path, cache_dir, min_speed=0.75, grade=None):
+        self.path, self.min_speed, self.grade = path, min_speed, grade
+        self.dir = os.path.join(cache_dir, os.path.splitext(os.path.basename(path))[0])
+        self.dur = float(subprocess.run(
+            ["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", path],
+            capture_output=True, text=True).stdout.strip())
+        self._speed = None
+        self._cache = {}
+
+    def _extract(self, speed):
+        d = f"{self.dir}_s{int(speed * 100)}"
+        if not os.path.isdir(d) or not os.listdir(d):
+            os.makedirs(d, exist_ok=True)
+            vf = f"setpts=PTS/{speed:.3f},"
+            vf += "minterpolate=fps=30:mi_mode=blend," if speed < 0.99 else "fps=30,"
+            vf += "scale=1920:1080:flags=lanczos,unsharp=5:5:0.6"
+            subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", self.path, "-vf", vf,
+                            "-q:v", "3", os.path.join(d, "%05d.jpg")], check=True)
+        self.frames = sorted(os.listdir(d))
+        self.fdir = d
+
+    def frame(self, t, scene_dur):
+        speed = clamp(self.dur / max(scene_dur, 0.1), self.min_speed, 1.0)
+        if speed != self._speed:
+            self._speed = speed
+            self._extract(speed)
+        n = len(self.frames)
+        i = int(t * FPS)
+        hold = max(0, i - (n - 1))
+        name = self.frames[min(i, n - 1)]
+        img = self._cache.get(name)
+        if img is None:
+            img = Image.open(os.path.join(self.fdir, name)).convert("RGB")
+            if self.grade:
+                img = self.grade(img)
+            self._cache = {name: img}  # keep only the current frame
+        if hold:
+            z = 1 + 0.02 * hold / FPS
+            cw, ch = W / z, H / z
+            img = img.resize((W, H), Image.BILINEAR, box=((W - cw) / 2, (H - ch) / 2, (W + cw) / 2, (H + ch) / 2))
+        return img.convert("RGBA")
+
+
 def darken(img, k):
     return Image.blend(img.convert("RGB"), Image.new("RGB", img.size, INK), k).convert("RGBA")
 
@@ -207,17 +257,20 @@ class Ctx:
 
 
 def build_schedule(scenes, timing, total):
-    """scenes: list of (first_sentence_index, draw_fn). Returns [(start, end, fn)]."""
+    """scenes: list of (key, draw_fn); key is a sentence index (int) or an
+    absolute time in seconds (float). Returns [(start, end, fn)]."""
+    def at(key):
+        return key if isinstance(key, float) else timing[key]["start"] - 0.25
     out = []
-    for k, (si, fn) in enumerate(scenes):
-        start = 0.0 if k == 0 else timing[si]["start"] - 0.25
-        end = total if k == len(scenes) - 1 else timing[scenes[k + 1][0]]["start"] - 0.25
+    for k, (key, fn) in enumerate(scenes):
+        start = 0.0 if k == 0 else at(key)
+        end = total if k == len(scenes) - 1 else at(scenes[k + 1][0])
         out.append((start, end, fn))
     return out
 
 
 def render(scenes, timing_path, audio_path, music_path, out_path, tail=3.5,
-           xfade=0.35, srt_path=None, preview_every=None):
+           xfade=0.35, srt_path=None, preview_every=None, music_offset=0.0, music_gain=0.9):
     timing = json.load(open(timing_path))["sentences"]
     audio_dur = json.load(open(timing_path))["duration"]
     total = audio_dur + tail
@@ -247,19 +300,21 @@ def render(scenes, timing_path, audio_path, music_path, out_path, tail=3.5,
             print(f"  frame {f}/{nframes}", flush=True)
     ff.stdin.close()
     ff.wait()
-    mux(tmp, audio_path, music_path, out_path, total)
+    mux(tmp, audio_path, music_path, out_path, total, music_offset, music_gain)
     os.remove(tmp)
     if srt_path:
         write_srt(timing, srt_path)
 
 
-def mux(video, voice, music, out, total):
-    """Narration on top, music ducked underneath, loudness-normalised for YouTube."""
+def mux(video, voice, music, out, total, music_offset=0.0, music_gain=0.9):
+    """Narration on top, music ducked underneath, loudness-normalised for YouTube.
+    music_offset trims that many seconds off the start of the music."""
     inputs = ["-i", video, "-i", voice]
     if music:
-        inputs += ["-i", music]
+        inputs += ["-ss", f"{music_offset:.2f}", "-i", music]
         fc = ("[1:a]aresample=48000,aformat=channel_layouts=stereo,apad,asplit[v][key];"
-              "[2:a]aresample=48000,volume=0.9[m];"
+              f"[2:a]aresample=48000,aformat=channel_layouts=stereo,volume={music_gain},"
+              f"afade=t=in:d=1.5,afade=t=out:st={total - 2.5:.2f}:d=2.5,apad[m];"
               "[m][key]sidechaincompress=threshold=0.03:ratio=6:attack=20:release=400[duck];"
               "[duck][v]amix=inputs=2:duration=first:normalize=0,"
               f"atrim=0:{total:.2f},loudnorm=I=-14:TP=-1.5:LRA=11[a]")
@@ -279,7 +334,8 @@ def write_srt(timing, path, display=None):
     """display: optional list of on-screen caption strings (defaults to sentence text)."""
     with open(path, "w", encoding="utf-8") as f:
         for k, s in enumerate(timing):
-            text = display[k] if display else s["text"]
+            text = display[k] if display else (
+                " ".join(w["w"] for w in s["words"]) if s.get("words") else s["text"])
             f.write(f"{k + 1}\n{srt_time(s['start'])} --> {srt_time(s['end'] + 0.15)}\n{text}\n\n")
 
 

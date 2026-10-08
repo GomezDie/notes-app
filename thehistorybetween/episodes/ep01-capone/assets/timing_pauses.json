@@ -1,0 +1,258 @@
+{
+ "audio": "vo_take1.mp3",
+ "duration": 111.49000000000001,
+ "sentences": [
+  {
+   "i": 0,
+   "text": "It’s a freezing Thursday morning in Chicago.",
+   "start": 0.0,
+   "end": 2.201,
+   "syl_per_s": 5.9
+  },
+  {
+   "i": 1,
+   "text": "February fourteenth, nineteen twenty-nine.",
+   "start": 2.707,
+   "end": 5.006,
+   "syl_per_s": 4.8
+  },
+  {
+   "i": 2,
+   "text": "A black Cadillac turns onto North Clark Street.",
+   "start": 5.501,
+   "end": 8.09,
+   "syl_per_s": 4.2
+  },
+  {
+   "i": 3,
+   "text": "It has a siren, a gong, and a rack for rifles.",
+   "start": 8.502,
+   "end": 11.977,
+   "syl_per_s": 3.7
+  },
+  {
+   "i": 4,
+   "text": "To anyone watching, it’s a police car.",
+   "start": 12.442,
+   "end": 14.743,
+   "syl_per_s": 4.8
+  },
+  {
+   "i": 5,
+   "text": "It stops outside a brick garage at number twenty-one twenty-two.",
+   "start": 15.17,
+   "end": 18.934,
+   "syl_per_s": 4.5
+  },
+  {
+   "i": 6,
+   "text": "The sign out front says S M C Cartage Company.",
+   "start": 19.496,
+   "end": 22.64,
+   "syl_per_s": 4.1
+  },
+  {
+   "i": 7,
+   "text": "But nobody here moves furniture.",
+   "start": 23.177,
+   "end": 24.726,
+   "syl_per_s": 6.5
+  },
+  {
+   "i": 8,
+   "text": "This is a depot for the North Side Gang, the last crew in Chicago still standing in the way of one man.",
+   "start": 25.151,
+   "end": 30.82,
+   "syl_per_s": 4.6
+  },
+  {
+   "i": 9,
+   "text": "Four men get out.",
+   "start": 31.26,
+   "end": 32.265,
+   "syl_per_s": 4.0
+  },
+  {
+   "i": 10,
+   "text": "Two of them are wearing police uniforms.",
+   "start": 32.777,
+   "end": 34.749,
+   "syl_per_s": 5.6
+  },
+  {
+   "i": 11,
+   "text": "Inside, seven men are waiting, reportedly for a delivery of hijacked whiskey.",
+   "start": 35.191,
+   "end": 40.185,
+   "syl_per_s": 4.8
+  },
+  {
+   "i": 12,
+   "text": "When they see the uniforms, nobody panics.",
+   "start": 40.739,
+   "end": 43.354,
+   "syl_per_s": 4.6
+  },
+  {
+   "i": 13,
+   "text": "In Prohibition Chicago, raids happen all the time.",
+   "start": 43.821,
+   "end": 47.061,
+   "syl_per_s": 4.3
+  },
+  {
+   "i": 14,
+   "text": "Usually it means a fine.",
+   "start": 47.635,
+   "end": 48.867,
+   "syl_per_s": 5.7
+  },
+  {
+   "i": 15,
+   "text": "Maybe a bribe.",
+   "start": 49.22,
+   "end": 49.997,
+   "syl_per_s": 3.9
+  },
+  {
+   "i": 16,
+   "text": "So they do what they’re told.",
+   "start": 50.332,
+   "end": 51.578,
+   "syl_per_s": 5.6
+  },
+  {
+   "i": 17,
+   "text": "They line up facing the back wall.",
+   "start": 51.981,
+   "end": 53.589,
+   "syl_per_s": 5.0
+  },
+  {
+   "i": 18,
+   "text": "Then the officers open fire.",
+   "start": 54.019,
+   "end": 55.579,
+   "syl_per_s": 5.1
+  },
+  {
+   "i": 19,
+   "text": "Two Thompson submachine guns.",
+   "start": 56.137,
+   "end": 57.776,
+   "syl_per_s": 4.3
+  },
+  {
+   "i": 20,
+   "text": "Two shotguns.",
+   "start": 58.182,
+   "end": 59.249,
+   "syl_per_s": 2.8
+  },
+  {
+   "i": 21,
+   "text": "Around seventy rounds in a matter of seconds.",
+   "start": 59.604,
+   "end": 61.99,
+   "syl_per_s": 5.4
+  },
+  {
+   "i": 22,
+   "text": "When real police arrive, six men are dead.",
+   "start": 62.423,
+   "end": 64.864,
+   "syl_per_s": 4.1
+  },
+  {
+   "i": 23,
+   "text": "One is still breathing.",
+   "start": 65.254,
+   "end": 66.284,
+   "syl_per_s": 4.9
+  },
+  {
+   "i": 24,
+   "text": "Frank Gusenberg has fourteen bullets in him.",
+   "start": 66.758,
+   "end": 69.118,
+   "syl_per_s": 4.7
+  },
+  {
+   "i": 25,
+   "text": "A detective asks him who did it.",
+   "start": 69.513,
+   "end": 71.141,
+   "syl_per_s": 5.5
+  },
+  {
+   "i": 26,
+   "text": "“Nobody shot me,” he says.",
+   "start": 71.703,
+   "end": 73.564,
+   "syl_per_s": 3.8
+  },
+  {
+   "i": 27,
+   "text": "Three hours later, he’s dead too.",
+   "start": 74.059,
+   "end": 76.206,
+   "syl_per_s": 3.7
+  },
+  {
+   "i": 28,
+   "text": "The man everyone suspects is more than a thousand miles away, at his estate in Florida.",
+   "start": 76.705,
+   "end": 81.304,
+   "syl_per_s": 5.4
+  },
+  {
+   "i": 29,
+   "text": "He has the perfect alibi.",
+   "start": 81.773,
+   "end": 83.246,
+   "syl_per_s": 5.4
+  },
+  {
+   "i": 30,
+   "text": "His name is Alphonse Capone.",
+   "start": 83.706,
+   "end": 85.326,
+   "syl_per_s": 4.3
+  },
+  {
+   "i": 31,
+   "text": "He’s thirty years old, and he’s the most famous gangster in America.",
+   "start": 85.769,
+   "end": 89.514,
+   "syl_per_s": 5.3
+  },
+  {
+   "i": 32,
+   "text": "The massacre makes headlines around the world.",
+   "start": 90.024,
+   "end": 92.296,
+   "syl_per_s": 5.3
+  },
+  {
+   "i": 33,
+   "text": "And it forces a question the government can no longer ignore: how do you catch a man who never pulls the trigger himself?",
+   "start": 92.828,
+   "end": 99.813,
+   "syl_per_s": 4.6
+  },
+  {
+   "i": 34,
+   "text": "The answer will take a Treasury agent, a nervous bookkeeper, a few forgotten ledgers… and the most boring crime in the American legal code.",
+   "start": 100.14,
+   "end": 107.933,
+   "syl_per_s": 5.0
+  },
+  {
+   "i": 35,
+   "text": "This is the story of the hunt for Al Capone.",
+   "start": 108.561,
+   "end": 111.08,
+   "syl_per_s": 4.8
+  }
+ ]
+}

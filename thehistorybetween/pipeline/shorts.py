@@ -28,6 +28,30 @@ def chunk(text, max_words=5):
     return [" ".join(words[i:i + max_words]) for i in range(0, len(words), max_words)]
 
 
+def caption_chunks(sentence, max_words=4):
+    """(text, start, end) chunks. Uses word timestamps when the timing file has
+    them (breaking after punctuation), else splits the sentence evenly."""
+    words = sentence.get("words")
+    if not words:
+        parts = chunk(sentence["text"], max_words + 1)
+        a, b = sentence["start"], sentence["end"]
+        step = (b - a) / len(parts)
+        return [(p, a + k * step, a + (k + 1) * step) for k, p in enumerate(parts)]
+    out, cur = [], []
+    for w in words:
+        cur.append(w)
+        if len(cur) >= max_words or w["w"].rstrip("\u201d\"").endswith((",", ".", "?", "!", ":", "\u2026")):
+            out.append(cur)
+            cur = []
+    if cur:
+        out.append(cur)
+    res = []
+    for k, g in enumerate(out):
+        end = out[k + 1][0]["s"] if k + 1 < len(out) else g[-1]["e"]
+        res.append((" ".join(w["w"] for w in g), g[0]["s"], max(end, g[-1]["e"])))
+    return res
+
+
 def build_ass(sentences, t0, clip_dur, hook, cta):
     head = """[Script Info]
 ScriptType: v4.00+
@@ -46,12 +70,9 @@ Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
 """
     ev = [f"Dialogue: 0,{ass_time(0)},{ass_time(clip_dur - 2.6)},Hook,,0,0,0,,{ass_escape(hook)}"]
     for s in sentences:
-        parts = chunk(s["text"])
-        a, b = s["start"] - t0, s["end"] - t0
-        step = (b - a) / len(parts)
-        for k, p in enumerate(parts):
-            ev.append(f"Dialogue: 1,{ass_time(a + k * step)},{ass_time(a + (k + 1) * step + 0.05)},Cap,,0,0,0,,"
-                      f"{{\\pos(540,1420)\\fad(60,0)}}{ass_escape(p)}")
+        for text, a, b in caption_chunks(s):
+            ev.append(f"Dialogue: 1,{ass_time(a - t0)},{ass_time(b - t0)},Cap,,0,0,0,,"
+                      f"{{\\pos(540,1420)\\fad(60,0)}}{ass_escape(text)}")
     ev.append(f"Dialogue: 2,{ass_time(clip_dur - 2.6)},{ass_time(clip_dur)},Cta,,0,0,0,,"
               f"{{\\fad(200,0)}}{ass_escape(cta)}")
     return head + "\n".join(ev) + "\n"

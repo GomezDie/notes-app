@@ -1,4 +1,10 @@
-"""Align narration sentences to an audio file without a speech model.
+"""Sentence timings for a narration track.
+
+Preferred: from word-level timestamps (e.g. ElevenLabs Scribe words.json):
+
+    python3 align.py --words words.json narration.mp3 sentences.txt out.json
+
+Fallback when no transcript is available: align without a speech model.
 
 Detects pauses with ffmpeg's silencedetect, then picks one pause per sentence
 boundary (monotonic dynamic programming) so that sentence lengths in time track
@@ -88,11 +94,41 @@ def align(sentences, speech_start, speech_end, pauses):
     return out
 
 
+ABBREV = re.compile(r"^(?:[A-Z]\.){2,}$")
+
+
+def from_words(words, sentences):
+    """Group transcript words into sentences at terminal punctuation, then
+    attach them to sentences.txt lines (which must be the same sentences)."""
+    words = [w for w in words if w.get("type", "word") == "word"]
+    groups, cur = [], []
+    for w in words:
+        cur.append(w)
+        t = w["text"].rstrip("\u201d\"')")
+        if t.endswith((".", "?", "!")) and not ABBREV.match(t) and not t.endswith("\u2026"):
+            groups.append(cur)
+            cur = []
+    if cur:
+        groups.append(cur)
+    if len(groups) != len(sentences):
+        raise SystemExit(f"transcript has {len(groups)} sentences, sentences.txt has {len(sentences)}")
+    return [{"i": k, "text": s, "start": g[0]["start"], "end": g[-1]["end"],
+             "words": [{"w": w["text"], "s": w["start"], "e": w["end"]} for w in g]}
+            for k, (s, g) in enumerate(zip(sentences, groups))]
+
+
 def main():
-    audio, sent_file, out_file = sys.argv[1:4]
+    args = sys.argv[1:]
+    words_file = None
+    if args[0] == "--words":
+        words_file, args = args[1], args[2:]
+    audio, sent_file, out_file = args[:3]
     sentences = [l.strip() for l in open(sent_file, encoding="utf-8") if l.strip()]
     s0, s1, pauses, dur = detect_pauses(audio)
-    timeline = align(sentences, s0, s1, pauses)
+    if words_file:
+        timeline = from_words(json.load(open(words_file))["words"], sentences)
+    else:
+        timeline = align(sentences, s0, s1, pauses)
     json.dump({"audio": audio, "duration": dur, "sentences": timeline},
               open(out_file, "w"), indent=1, ensure_ascii=False)
     for x in timeline:
