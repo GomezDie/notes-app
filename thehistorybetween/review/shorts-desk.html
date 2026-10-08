@@ -98,7 +98,7 @@ textarea { width: 100%; min-height: 70px; font: 14px/1.5 var(--body); padding: 8
   <header class="mast">
     <div class="eyebrow">TheHistoryBetween · Shorts</div>
     <h1>Shorts Desk</h1>
-    <p>Every two days a new 65-second Short lands here. Watch it, check the facts against the sources, then approve it. Approved Shorts are scheduled for TikTok and YouTube Shorts at the next run, 6:00 PM Central.</p>
+    <p>Every two days a new 65-second Short lands here. Watch it, check the facts against the sources, then approve it. Approved Shorts are scheduled for TikTok and YouTube Shorts at the next run, to go live at 12:00 AM (midnight) Central.</p>
     <div class="tally" id="tally"><span>Loading the queue…</span></div>
   </header>
 
@@ -170,7 +170,7 @@ function proof(r) {
   if (r.hook) c.append(el("p", "hook", r.hook));
 
   const plan = el("p", "plan");
-  plan.append(el("b", null, "Post plan: "), document.createTextNode(r.postPlan || "TikTok + YouTube Shorts, next 6:00 PM CT slot after approval"));
+  plan.append(el("b", null, "Post plan: "), document.createTextNode(r.postPlan || "TikTok + YouTube Shorts, next 12:00 AM CT (midnight) slot after approval"));
   c.append(plan);
 
   if (r.caption || (r.hashtags && r.hashtags.length)) {
