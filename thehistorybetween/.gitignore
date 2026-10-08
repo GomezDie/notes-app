@@ -1,2 +1,5 @@
 episodes/*/build/
 __pycache__/
+shorts/*/build/
+shorts/*/clips/
+shorts/*/stills/

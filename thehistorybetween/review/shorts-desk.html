@@ -1,0 +1,288 @@
+<title>TheHistoryBetween Shorts Desk</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a newsroom review desk. Each Short is a phone-shaped proof beside the copy that will run with it. */
+:root {
+  --bg: #e9ebe8;
+  --panel: #f7f8f6;
+  --ink: #1b1a17;
+  --muted: #5c5a53;
+  --rule: #cfd2cc;
+  --gold: #8a6a22;
+  --gold-soft: #efe4cc;
+  --ok: #2f6b45;
+  --ok-soft: #dcebe1;
+  --warn: #8a5a0a;
+  --warn-soft: #f3e6cc;
+  --bad: #a3271f;
+  --bad-soft: #f4dcd9;
+  --phone: #0e0d0b;
+  --display: "Old Standard TT", "Times New Roman", Georgia, serif;
+  --body: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #121210; --panel: #1b1a17; --ink: #ece6d8; --muted: #a39d8e; --rule: #34322c;
+    --gold: #c9a45c; --gold-soft: #3a3020; --ok: #7cc196; --ok-soft: #1d3326;
+    --warn: #e0b25c; --warn-soft: #3a2e17; --bad: #e57f74; --bad-soft: #3d1f1c; --phone: #000;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #121210; --panel: #1b1a17; --ink: #ece6d8; --muted: #a39d8e; --rule: #34322c;
+  --gold: #c9a45c; --gold-soft: #3a3020; --ok: #7cc196; --ok-soft: #1d3326;
+  --warn: #e0b25c; --warn-soft: #3a2e17; --bad: #e57f74; --bad-soft: #3d1f1c; --phone: #000;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--ink); font: 15px/1.55 var(--body); }
+.wrap { max-width: 1080px; margin: 0 auto; padding-inline: 20px; padding-block: 28px 64px; display: grid; gap: 28px; }
+header.mast { display: grid; gap: 6px; border-bottom: 2px solid var(--ink); padding-bottom: 14px; }
+.eyebrow { font: 500 12px/1.2 var(--mono); letter-spacing: .14em; text-transform: uppercase; color: var(--gold); }
+h1 { font: 700 clamp(30px, 5vw, 46px)/1.05 var(--display); margin: 0; text-wrap: balance; }
+.mast p { margin: 0; color: var(--muted); max-width: 62ch; }
+.tally { display: flex; flex-wrap: wrap; gap: 8px 18px; font: 13px var(--mono); color: var(--muted); font-variant-numeric: tabular-nums; }
+.tally b { color: var(--ink); font-weight: 500; }
+h2 { font: 700 22px/1.2 var(--display); margin: 0; }
+.section { display: grid; gap: 16px; }
+.section-head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; flex-wrap: wrap; border-bottom: 1px solid var(--rule); padding-bottom: 8px; }
+.section-head span { font: 13px var(--mono); color: var(--muted); }
+
+.proof { display: grid; grid-template-columns: minmax(200px, 300px) minmax(0, 1fr); gap: 24px; background: var(--panel); border: 1px solid var(--rule); border-radius: 6px; padding: 20px; }
+@media (max-width: 720px) { .proof { grid-template-columns: 1fr; } .phone { max-width: 300px; margin-inline: auto; } }
+.phone { background: var(--phone); border-radius: 22px; padding: 8px; width: 100%; }
+.phone video, .phone .novideo { display: block; width: 100%; aspect-ratio: 9 / 16; border-radius: 15px; background: #000; object-fit: cover; }
+.phone .novideo { display: grid; place-items: center; color: #a39d8e; font: 13px var(--mono); text-align: center; padding: 16px; }
+.copy { display: grid; gap: 14px; align-content: start; min-width: 0; }
+.meta { display: flex; flex-wrap: wrap; gap: 6px 14px; align-items: center; font: 12px/1.4 var(--mono); color: var(--muted); letter-spacing: .04em; font-variant-numeric: tabular-nums; }
+.title { font: 700 26px/1.15 var(--display); margin: 0; text-wrap: balance; }
+.hook { font: italic 17px/1.4 var(--display); color: var(--gold); margin: 0; }
+.pill { font: 600 11px/1 var(--mono); letter-spacing: .1em; text-transform: uppercase; padding: 6px 9px; border-radius: 99px; background: var(--gold-soft); color: var(--gold); white-space: nowrap; }
+.pill.approved, .pill.scheduled, .pill.posted { background: var(--ok-soft); color: var(--ok); }
+.pill.changes { background: var(--warn-soft); color: var(--warn); }
+.pill.rejected { background: var(--bad-soft); color: var(--bad); }
+.field { display: grid; gap: 6px; }
+.label { font: 500 11px/1.2 var(--mono); letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+.caption { background: var(--bg); border: 1px solid var(--rule); border-radius: 4px; padding: 10px 12px; white-space: pre-wrap; overflow-wrap: anywhere; }
+.row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+details { border-top: 1px solid var(--rule); padding-top: 10px; }
+summary { cursor: pointer; font: 500 13px var(--body); }
+details .script { white-space: pre-wrap; font: 15px/1.6 var(--display); max-width: 65ch; margin-top: 8px; }
+.sources { margin: 6px 0 0; padding-left: 18px; font-size: 13px; overflow-wrap: anywhere; }
+.sources a { color: var(--gold); }
+.plan { font-size: 14px; }
+.plan b { font-weight: 600; }
+button { font: 600 14px var(--body); border-radius: 4px; padding: 9px 14px; cursor: pointer; border: 1px solid var(--rule); background: var(--panel); color: var(--ink); }
+button:focus-visible, textarea:focus-visible, summary:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+button.approve { background: var(--ok); border-color: var(--ok); color: var(--panel); }
+button.reject { color: var(--bad); }
+button.small { padding: 5px 10px; font-size: 12px; }
+button:disabled { opacity: .55; cursor: default; }
+textarea { width: 100%; min-height: 70px; font: 14px/1.5 var(--body); padding: 8px 10px; border: 1px solid var(--rule); border-radius: 4px; background: var(--panel); color: var(--ink); resize: vertical; }
+.note { font-size: 13px; color: var(--muted); }
+.decision { font-size: 13px; color: var(--muted); border-left: 3px solid var(--rule); padding-left: 10px; }
+.empty { border: 1px dashed var(--rule); border-radius: 6px; padding: 28px 20px; text-align: center; color: var(--muted); display: grid; gap: 6px; }
+.empty strong { font: 700 19px var(--display); color: var(--ink); }
+.log { display: grid; gap: 0; border-top: 1px solid var(--rule); }
+.log-row { display: grid; grid-template-columns: 4.5em minmax(0, 1fr) auto; gap: 12px; align-items: center; padding: 10px 0; border-bottom: 1px solid var(--rule); font-size: 14px; }
+.log-row .num { font: 13px var(--mono); color: var(--muted); font-variant-numeric: tabular-nums; }
+.log-row .t { min-width: 0; overflow-wrap: anywhere; }
+.toast { position: fixed; left: 50%; transform: translateX(-50%); bottom: calc(18px + env(safe-area-inset-bottom, 0px)); background: var(--ink); color: var(--panel); padding: 10px 16px; border-radius: 4px; font-size: 14px; }
+@media (prefers-reduced-motion: no-preference) { .proof { transition: border-color .2s; } }
+</style>
+
+<div class="wrap">
+  <header class="mast">
+    <div class="eyebrow">TheHistoryBetween · Shorts</div>
+    <h1>Shorts Desk</h1>
+    <p>Every two days a new 65-second Short lands here. Watch it, check the facts against the sources, then approve it. Approved Shorts are scheduled for TikTok and YouTube Shorts at the next run, 6:00 PM Central.</p>
+    <div class="tally" id="tally"><span>Loading the queue…</span></div>
+  </header>
+
+  <section class="section" aria-labelledby="h-wait">
+    <div class="section-head"><h2 id="h-wait">Waiting for your review</h2><span id="wait-count"></span></div>
+    <div id="pending" class="section">
+      <div class="empty"><strong>Nothing waiting yet</strong><span>The routine builds a new Short every two days and puts it here for review.</span></div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="h-log">
+    <div class="section-head"><h2 id="h-log">Approved, scheduled and posted</h2><span>newest first</span></div>
+    <div id="log" class="log"></div>
+    <p class="note" id="log-empty">Nothing approved yet.</p>
+  </section>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
+<script>
+const STATUS = {
+  pending: "Waiting for review", approved: "Approved", scheduled: "Scheduled",
+  posted: "Posted", changes: "Changes requested", rejected: "Rejected"
+};
+let db = null, canDecide = false, rows = [], downloads = null;
+const $ = (id) => document.getElementById(id);
+const el = (tag, cls, text) => { const e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; };
+
+function toast(msg) {
+  const t = $("toast"); t.textContent = msg; t.hidden = false;
+  clearTimeout(toast.h); toast.h = setTimeout(() => { t.hidden = true; }, 2600);
+}
+function fmtDate(iso) {
+  if (!iso) return "";
+  const d = new Date(iso); if (isNaN(d)) return iso;
+  return d.toLocaleString(undefined, { month: "short", day: "numeric", hour: "numeric", minute: "2-digit" });
+}
+function videoSrc(r) { return r.videoAssetId ? "/_blob/" + r.videoAssetId : (r.video || ""); }
+
+async function decide(id, status, note) {
+  if (!db) return;
+  try {
+    await db.doc("shorts/" + id).update({ status, note: note || "", decidedAt: new Date().toISOString() });
+    toast(status === "approved" ? "Approved. It will be scheduled at the next run." :
+          status === "changes" ? "Change request saved. The next run will rework it." : "Rejected.");
+  } catch (e) {
+    toast("Could not save: " + (e && e.message ? e.message : "try again"));
+  }
+}
+
+function proof(r) {
+  const card = el("article", "proof");
+  const phone = el("div", "phone");
+  const src = videoSrc(r);
+  if (src) {
+    const v = el("video"); v.src = src; v.controls = true; v.playsInline = true; v.preload = "metadata";
+    v.setAttribute("aria-label", "Preview of " + (r.title || "Short"));
+    phone.append(v);
+  } else phone.append(el("div", "novideo", "Video is still uploading"));
+  card.append(phone);
+
+  const c = el("div", "copy");
+  const meta = el("div", "meta");
+  meta.append(el("span", "pill " + (r.status || "pending"), STATUS[r.status] || r.status || "Waiting"));
+  if (r.n != null) meta.append(el("span", null, "No. " + String(r.n).padStart(3, "0")));
+  if (r.duration) meta.append(el("span", null, Math.round(r.duration) + " s"));
+  if (r.credits) meta.append(el("span", null, Number(r.credits).toLocaleString() + " credits"));
+  if (r.created) meta.append(el("span", null, "built " + fmtDate(r.created)));
+  c.append(meta, el("h3", "title", r.title || "Untitled Short"));
+  if (r.hook) c.append(el("p", "hook", r.hook));
+
+  const plan = el("p", "plan");
+  plan.append(el("b", null, "Post plan: "), document.createTextNode(r.postPlan || "TikTok + YouTube Shorts, next 6:00 PM CT slot after approval"));
+  c.append(plan);
+
+  if (r.caption || (r.hashtags && r.hashtags.length)) {
+    const f = el("div", "field");
+    const head = el("div", "row"); head.append(el("span", "label", "Caption"));
+    const text = (r.caption || "") + (r.hashtags && r.hashtags.length ? "\n\n" + r.hashtags.map(h => h.startsWith("#") ? h : "#" + h).join(" ") : "");
+    const copyBtn = el("button", "small", "Copy");
+    copyBtn.type = "button";
+    const box = el("div", "caption", text);
+    copyBtn.addEventListener("click", async () => {
+      try { await navigator.clipboard.writeText(text); toast("Caption copied"); }
+      catch { const s = getSelection(); const rg = document.createRange(); rg.selectNodeContents(box); s.removeAllRanges(); s.addRange(rg); toast("Selected. Press Ctrl+C or Cmd+C to copy."); }
+    });
+    head.append(copyBtn); f.append(head, box); c.append(f);
+  }
+  if (r.script) {
+    const d = el("details"); d.append(el("summary", null, "Narration script"), el("div", "script", r.script)); c.append(d);
+  }
+  if (r.sources && r.sources.length) {
+    const d = el("details"); d.append(el("summary", null, "Sources (" + r.sources.length + ")"));
+    const ul = el("ul", "sources");
+    r.sources.forEach(u => { const li = el("li"); const a = el("a", null, u); a.href = u; a.target = "_blank"; a.rel = "noopener"; li.append(a); ul.append(li); });
+    d.append(ul); c.append(d);
+  }
+  if (r.checks && r.checks.length) {
+    const d = el("details"); d.append(el("summary", null, "Accuracy checks done by the routine"));
+    const ul = el("ul", "sources"); r.checks.forEach(x => ul.append(el("li", null, x))); d.append(ul); c.append(d);
+  }
+  if (r.note && r.status !== "pending") c.append(el("div", "decision", "Your note: " + r.note));
+  if (downloads && src) {
+    const dl = el("button", "small", "Download MP4"); dl.type = "button";
+    dl.addEventListener("click", async () => {
+      dl.disabled = true;
+      try {
+        const blob = await (await fetch(src)).blob();
+        const res = await downloads.save({ filename: (r.slug || r.id) + ".mp4", data: blob });
+        if (res && res.status === "saved") toast("Saved");
+      } catch (e) {
+        if (!e || e.code !== "declined") toast("Could not save the file" + (e && e.code ? " (" + e.code + ")" : ""));
+      }
+      dl.disabled = false;
+    });
+    const row = el("div", "row"); row.append(dl, el("span", "note", "for posting by hand"));
+    c.append(row);
+  }
+
+  if (canDecide && (r.status === "pending" || r.status === "changes")) {
+    const id = "note-" + r.id;
+    const f = el("div", "field");
+    const lab = el("label", "label", "Note for changes (optional)"); lab.htmlFor = id;
+    const ta = el("textarea"); ta.id = id; ta.placeholder = "e.g. swap the car shot, fix the date in the caption";
+    f.append(lab, ta);
+    const acts = el("div", "row");
+    const ap = el("button", "approve", "Approve"); ap.type = "button";
+    const ch = el("button", null, "Request changes"); ch.type = "button";
+    const rj = el("button", "reject", "Reject"); rj.type = "button";
+    const lock = (on) => [ap, ch, rj].forEach(b => b.disabled = on);
+    ap.addEventListener("click", async () => { lock(true); await decide(r.id, "approved", ta.value.trim()); lock(false); });
+    ch.addEventListener("click", async () => {
+      if (!ta.value.trim()) { ta.focus(); toast("Add a note so the routine knows what to change."); return; }
+      lock(true); await decide(r.id, "changes", ta.value.trim()); lock(false);
+    });
+    rj.addEventListener("click", async () => { lock(true); await decide(r.id, "rejected", ta.value.trim()); lock(false); });
+    acts.append(ap, ch, rj);
+    c.append(f, acts);
+  } else if (!canDecide && r.status === "pending") {
+    c.append(el("p", "note", "Only the channel owner can approve Shorts."));
+  }
+  card.append(c);
+  return card;
+}
+
+function render() {
+  const pending = rows.filter(r => r.status === "pending" || r.status === "changes")
+                      .sort((a, b) => (a.n ?? 0) - (b.n ?? 0));
+  const done = rows.filter(r => ["approved", "scheduled", "posted", "rejected"].includes(r.status))
+                   .sort((a, b) => (b.n ?? 0) - (a.n ?? 0));
+  const p = $("pending"); p.replaceChildren();
+  if (!pending.length) {
+    const e = el("div", "empty"); e.append(el("strong", null, "Nothing waiting"), el("span", null, "The routine builds a new Short every two days and puts it here for review."));
+    p.append(e);
+  } else pending.forEach(r => p.append(proof(r)));
+  $("wait-count").textContent = pending.length ? pending.length + " to review" : "";
+
+  const log = $("log"); log.replaceChildren();
+  done.forEach(r => {
+    const row = el("div", "log-row");
+    row.append(el("span", "num", "No. " + String(r.n ?? "").padStart(3, "0")));
+    const t = el("span", "t"); t.textContent = r.title || r.id;
+    if (r.postedAt || r.scheduledFor) t.append(el("span", "note", "  " + (r.postedAt ? "posted " + fmtDate(r.postedAt) : "scheduled " + fmtDate(r.scheduledFor))));
+    row.append(t, el("span", "pill " + r.status, STATUS[r.status] || r.status));
+    log.append(row);
+  });
+  $("log-empty").hidden = done.length > 0;
+
+  const count = (s) => rows.filter(r => r.status === s).length;
+  const tally = $("tally"); tally.replaceChildren();
+  [["Waiting", count("pending") + count("changes")], ["Approved", count("approved")], ["Scheduled", count("scheduled")], ["Posted", count("posted")]]
+    .forEach(([k, v]) => { const s = el("span"); s.append(document.createTextNode(k + " "), el("b", null, String(v))); tally.append(s); });
+}
+
+(async () => {
+  const use = window.claude && window.claude.use;
+  if (!use) { $("tally").textContent = "Open this page on claude.ai to see the queue."; return; }
+  const [dbNs, user, dl] = await Promise.all([window.claude.use("db"), window.claude.use("user"), window.claude.use("downloads")]);
+  downloads = dl;
+  if (user) { try { canDecide = await user.isOwner() || await user.canEdit(); } catch { canDecide = false; } }
+  if (!dbNs) { $("tally").textContent = "Sign in to claude.ai to see the queue."; return; }
+  db = dbNs;
+  db.collection("shorts").onSnapshot((snap) => {
+    rows = snap.docs.map(d => Object.assign({ id: d.id }, d.data()));
+    render();
+  }, (e) => { $("tally").textContent = "The queue could not load (" + (e && e.code ? e.code : "error") + "). Reload the page."; });
+})();
+</script>

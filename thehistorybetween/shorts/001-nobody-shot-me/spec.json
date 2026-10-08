@@ -1,0 +1,131 @@
+{
+ "title": "Shot 14 times. His last words were a lie.",
+ "hook": "SHOT 14 TIMES.\nHIS LAST WORDS:",
+ "voice": "vo.mp3",
+ "words": "words.json",
+ "music": "../../episodes/ep01-capone/assets/music_score.mp3",
+ "music_offset": 32.8,
+ "min_duration": 61.5,
+ "beats": [
+  {
+   "at": "February",
+   "type": "clip",
+   "src": "../../episodes/ep01-capone/assets/clips/clip_street.mp4",
+   "focus": 0.55,
+   "label": [
+    "CHICAGO",
+    "February 14, 1929"
+   ]
+  },
+  {
+   "at": "Seven men are waiting",
+   "type": "clip",
+   "src": "../../episodes/ep01-capone/assets/clips/clip_garage.mp4",
+   "focus": 0.42,
+   "label": [
+    "2122 N. CLARK STREET",
+    "S.M.C. Cartage Co."
+   ]
+  },
+  {
+   "at": "A black Cadillac",
+   "type": "clip",
+   "src": "../../episodes/ep01-capone/assets/clips/clip_car.mp4",
+   "focus": 0.5
+  },
+  {
+   "at": "And two of the four",
+   "type": "clip",
+   "src": "../../episodes/ep01-capone/assets/clips/clip_men.mp4",
+   "focus": 0.5,
+   "label": [
+    "POLICE UNIFORMS",
+    "but they weren't real police"
+   ]
+  },
+  {
+   "at": "Inside, nobody panics",
+   "type": "card",
+   "kicker": "PROHIBITION, 1920–1933",
+   "text": "Police raids were routine.",
+   "sub": "Usually a fine. Maybe a bribe."
+  },
+  {
+   "at": "So the seven men",
+   "type": "lineup",
+   "n": 7,
+   "caption": "7 MEN, FACING THE WALL"
+  },
+  {
+   "at": "Then the officers",
+   "type": "flash"
+  },
+  {
+   "at": "Two Thompson",
+   "type": "stat",
+   "bg": "../../episodes/ep01-capone/assets/clips/clip_casings.mp4",
+   "focus": 0.45,
+   "dim": 0.6,
+   "lines": [
+    "2 × THOMPSON SUBMACHINE GUNS",
+    "2 × SHOTGUNS"
+   ],
+   "line_gap": 2.15,
+   "big": "≈70",
+   "big_at": 3.55,
+   "big_label": "ROUNDS IN SECONDS"
+  },
+  {
+   "at": "When the real police",
+   "type": "card",
+   "bg": "../../episodes/ep01-capone/assets/clips/clip_casings.mp4",
+   "focus": 0.6,
+   "dim": 0.72,
+   "kicker": "ONE SURVIVOR",
+   "text": "Frank Gusenberg",
+   "sub": "14 bullets"
+  },
+  {
+   "at": "Nobody shot me",
+   "type": "quote",
+   "text": "Nobody shot me.",
+   "attr": "FRANK GUSENBERG · 1929"
+  },
+  {
+   "at": "Three hours later",
+   "type": "card",
+   "text": "Dead three hours later.",
+   "sub": "He never named a killer."
+  },
+  {
+   "at": "To this day",
+   "type": "clip",
+   "src": "../../episodes/ep01-capone/assets/clips/clip_garage.mp4",
+   "focus": 0.6,
+   "dim": 0.45,
+   "stamp": "NO ONE CONVICTED",
+   "stamp_at": 1.2
+  },
+  {
+   "at": "But the man everyone",
+   "type": "clip",
+   "src": "../../episodes/ep01-capone/assets/clips/clip_shadow.mp4",
+   "focus": 0.45,
+   "label": [
+    "THE MAN EVERYONE BLAMED",
+    "Al Capone"
+   ]
+  },
+  {
+   "at": "Follow",
+   "type": "end",
+   "text": "The Hunt for\nAl Capone",
+   "sub": "Follow for part two"
+  }
+ ],
+ "sources": [
+  "https://themobmuseum.org/artifacts/st-valentines-day-massacre-evidence/",
+  "https://www.saturdayeveningpost.com/sep-keyword/st-valentines-day-massacre/",
+  "https://en.wikipedia.org/wiki/Calvin_Hooker_Goddard"
+ ]
+}
