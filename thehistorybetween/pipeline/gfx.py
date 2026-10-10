@@ -35,6 +35,19 @@ FONTS = {
     "sans": "LiberationSans-Regular.ttf",
     "sans_b": "LiberationSans-Bold.ttf",
 }
+# Local Windows runs: Liberation is not installed, so use the metric-compatible
+# Times New Roman / Courier New / Arial that ship with Windows.
+if not os.path.isdir(FONT_DIR) and os.path.isdir(r"C:\Windows\Fonts"):
+    FONT_DIR = r"C:\Windows\Fonts"
+    FONTS = {
+        "serif": "times.ttf",
+        "serif_b": "timesbd.ttf",
+        "serif_i": "timesi.ttf",
+        "mono": "cour.ttf",
+        "mono_b": "courbd.ttf",
+        "sans": "arial.ttf",
+        "sans_b": "arialbd.ttf",
+    }
 
 
 @functools.lru_cache(maxsize=None)
