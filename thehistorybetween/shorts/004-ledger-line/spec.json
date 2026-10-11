@@ -1,0 +1,179 @@
+{
+ "title": "Capone went down for one line in a ledger",
+ "hook": "CAPONE WENT DOWN FOR\nONE LINE OF INK",
+ "voice": "vo.mp3",
+ "words": "words.json",
+ "music": "../../episodes/ep01-capone/assets/music_score.mp3",
+ "music_offset": 27.6,
+ "min_duration": 61.5,
+ "beats": [
+  {
+   "at": "Chicago",
+   "type": "clip",
+   "src": "../../episodes/ep01-capone/assets/clips/clip_street.mp4",
+   "focus": 0.55,
+   "label": ["CHICAGO", "1930"]
+  },
+  {
+   "at": "Al Capone",
+   "type": "clip",
+   "src": "../../episodes/ep01-capone/assets/clips/clip_shadow.mp4",
+   "focus": 0.45,
+   "label": ["AL CAPONE", "the most famous gangster in America"]
+  },
+  {
+   "at": "No bank accounts",
+   "type": "stat",
+   "bg": "../../episodes/ep01-capone/assets/clips/clip_shadow.mp4",
+   "focus": 0.6,
+   "dim": 0.7,
+   "lines": ["NO BANK ACCOUNTS", "NO PROPERTY IN HIS NAME"],
+   "line_gap": 1.3,
+   "big": "CASH",
+   "big_at": 3.6,
+   "big_label": "FOR NEARLY EVERYTHING"
+  },
+  {
+   "at": "So the Treasury",
+   "type": "clip",
+   "src": "clips/clip_office.mp4",
+   "focus": 0.5,
+   "label": ["FRANK J. WILSON", "Treasury agent, former accountant"]
+  },
+  {
+   "at": "Late one night",
+   "type": "clip",
+   "src": "../../episodes/ep01-capone/assets/clips/clip_ledger.mp4",
+   "focus": 0.5,
+   "label": ["CICERO, ILLINOIS", "a gambling house's ledgers"]
+  },
+  {
+   "at": "Page after page",
+   "type": "clip",
+   "src": "clips/clip_casino.mp4",
+   "focus": 0.5
+  },
+  {
+   "at": "split between",
+   "type": "stat",
+   "bg": "clips/clip_casino.mp4",
+   "focus": 0.5,
+   "dim": 0.72,
+   "lines": ["PROFITS SPLIT THREE WAYS"],
+   "big": "A · R · J",
+   "big_at": 1.9,
+   "big_label": "NO NAMES. JUST INITIALS."
+  },
+  {
+   "at": "Then one line",
+   "type": "clip",
+   "src": "../../episodes/ep01-capone/assets/clips/clip_ledger.mp4",
+   "focus": 0.6,
+   "dim": 0.35
+  },
+  {
+   "at": "Frank paid",
+   "type": "quote",
+   "text": "Frank paid $17,500 for Al.",
+   "attr": "THE LEDGER ENTRY"
+  },
+  {
+   "at": "For the first time",
+   "type": "card",
+   "kicker": "THE FIRST HARD LINK",
+   "text": "Gambling money,\npaid to “Al.”"
+  },
+  {
+   "at": "But who wrote",
+   "type": "clip",
+   "src": "clips/clip_hands.mp4",
+   "focus": 0.5,
+   "label": ["HANDWRITING", "vs. bank deposit slips"]
+  },
+  {
+   "at": "A bookkeeper",
+   "type": "card",
+   "kicker": "THE BOOKKEEPER",
+   "text": "Leslie Shumway",
+   "sub": "He wrote the ledger."
+  },
+  {
+   "at": "Agents track",
+   "type": "clip",
+   "src": "clips/clip_miami.mp4",
+   "focus": 0.5,
+   "label": ["MIAMI", "early 1931"]
+  },
+  {
+   "at": "He agrees",
+   "type": "card",
+   "text": "He agrees to testify.",
+   "sub": "Against Al Capone."
+  },
+  {
+   "at": "In October",
+   "type": "clip",
+   "src": "clips/clip_court.mp4",
+   "focus": 0.5,
+   "label": ["OCTOBER 1931", "federal court, Chicago"],
+   "stamp": "GUILTY",
+   "stamp_at": 3.5
+  },
+  {
+   "at": "Eleven years",
+   "type": "stat",
+   "bg": "clips/clip_court.mp4",
+   "focus": 0.6,
+   "dim": 0.75,
+   "big": "11",
+   "big_at": 0.1,
+   "big_label": "YEARS. FOR TAX EVASION."
+  },
+  {
+   "at": "Not for murder",
+   "type": "card",
+   "text": "Not for murder."
+  },
+  {
+   "at": "For one line",
+   "type": "clip",
+   "src": "../../episodes/ep01-capone/assets/clips/clip_ledger.mp4",
+   "focus": 0.45,
+   "dim": 0.2
+  },
+  {
+   "at": "Follow",
+   "type": "end",
+   "text": "The Hunt for\nAl Capone",
+   "sub": "Follow for part five"
+  }
+ ],
+ "sources": [
+  "https://en.wikipedia.org/wiki/Frank_J._Wilson",
+  "https://www.grantthornton.co.uk/insights/the-accountant-and-al-capone/",
+  "https://crimelibrary.org/gangsters_outlaws/mob_bosses/capone/pay_23.html",
+  "https://en.wikisource.org/wiki/Summary_report_of_Al_Capone_for_the_Bureau_of_Internal_Revenue",
+  "https://en.wikipedia.org/wiki/Hawthorne_Smoke_Shop",
+  "https://themobmuseum.org/blog/capone-tax-evasion-trial-90-years-ago-the-t-men-had-the-goods-on-mob-chief/",
+  "https://www.fbi.gov/history/famous-cases/al-capone"
+ ],
+ "elevenlabs": {
+  "flow_id": "JEwlbDddA505fPjx9XGx",
+  "narration": {"session_id": "3UZnae8uydpDc65XXh0t", "generation_id": "iWftbt96YYF8skkXu5qM", "node_id": "wwOYvsgJDT2XeaLtziL8"},
+  "words": {"session_id": "RgxSXmBrCf7HEYGqH02Y", "generation_id": "7jLez0U6r8Lh1f7DTkFi"},
+  "stills": {
+   "office": {"session_id": "y8scXr9feldcG2hgzlJH", "generation_id": "CTHhbWaT1gZJagLluRSZ"},
+   "hands": {"session_id": "ogu9KIiX2V5u7BGCDNqf", "generation_id": "OzNRCx0FEBynb8BPeMJV"},
+   "casino": {"session_id": "2SGrCS9cUWBp0k9ub7lf", "generation_id": "t6TZKgdXcpr2ll8i1uxR"},
+   "miami": {"session_id": "p52yHfUFzOr4PhSRhSHO", "generation_id": "VoAYoJXjjmGetDxiV2hE"},
+   "court": {"session_id": "eg9Xz4aZYFW2QiUv5BzT", "generation_id": "YIjI82UgyYGQ74SAkE3r"}
+  },
+  "clips": {
+   "clip_office": {"session_id": "Nle1pvC9NABCd1FSC7w0", "generation_id": "YnH1YApSuiUuLJ8KtHzv"},
+   "clip_hands": {"session_id": "k9JujCVF3sRqMZUk9kyC", "generation_id": "ChFYMPeO8ZJmARgYXYkq"},
+   "clip_casino": {"session_id": "FwnJTaQPGwwXlIMhbRkW", "generation_id": "FcR0Mu6XsIFUPkmFTC9N"},
+   "clip_miami": {"session_id": "SiORBCDVBGDOnKr90BBR", "generation_id": "9LbU4JJuDwGX8FQmFFr0"},
+   "clip_court": {"session_id": "uqYOt9ferzVm8VEPnuMm", "generation_id": "6B9rrUxWiWrjKDTi1nm9"}
+  }
+ }
+}

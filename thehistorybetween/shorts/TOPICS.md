@@ -4,9 +4,9 @@ Take the first unchecked line. Keep series together. Every fact still needs sour
 
 ## Series: The Hunt for Al Capone
 - [x] 001 "Nobody shot me": the St. Valentine's Day Massacre (Feb 14, 1929)
-- [ ] Prohibition began on Capone's 21st birthday (Jan 17, 1920): how one law built his empire
-- [ ] The massacre that created America's first independent crime lab (Calvin Goddard, ballistics)
-- [ ] "Frank paid $17,500 for Al": the ledger line that sank Capone (Frank J. Wilson, Leslie Shumway)
+- [x] 002 Prohibition began on Capone's 21st birthday (Jan 17, 1920): how one law built his empire
+- [x] 003 The massacre that created America's first independent crime lab (Calvin Goddard, ballistics)
+- [x] 004 "Frank paid $17,500 for Al": the ledger line that sank Capone (Frank J. Wilson, Leslie Shumway)
 - [ ] The judge who swapped the entire jury (Judge Wilkerson, 1931)
 - [ ] Public Enemy No. 1: the Chicago Crime Commission list (April 1930)
 - [ ] Capone's soup kitchen during the Depression
