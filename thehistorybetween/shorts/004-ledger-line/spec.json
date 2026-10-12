@@ -12,14 +12,20 @@
    "type": "clip",
    "src": "../../episodes/ep01-capone/assets/clips/clip_street.mp4",
    "focus": 0.55,
-   "label": ["CHICAGO", "1930"]
+   "label": [
+    "CHICAGO",
+    "1930"
+   ]
   },
   {
    "at": "Al Capone",
    "type": "clip",
    "src": "../../episodes/ep01-capone/assets/clips/clip_shadow.mp4",
    "focus": 0.45,
-   "label": ["AL CAPONE", "the most famous gangster in America"]
+   "label": [
+    "AL CAPONE",
+    "the most famous gangster in America"
+   ]
   },
   {
    "at": "No bank accounts",
@@ -27,7 +33,10 @@
    "bg": "../../episodes/ep01-capone/assets/clips/clip_shadow.mp4",
    "focus": 0.6,
    "dim": 0.7,
-   "lines": ["NO BANK ACCOUNTS", "NO PROPERTY IN HIS NAME"],
+   "lines": [
+    "NO BANK ACCOUNTS",
+    "NO PROPERTY IN HIS NAME"
+   ],
    "line_gap": 1.3,
    "big": "CASH",
    "big_at": 3.6,
@@ -38,14 +47,20 @@
    "type": "clip",
    "src": "clips/clip_office.mp4",
    "focus": 0.5,
-   "label": ["FRANK J. WILSON", "Treasury agent, former accountant"]
+   "label": [
+    "FRANK J. WILSON",
+    "Treasury agent, former accountant"
+   ]
   },
   {
    "at": "Late one night",
    "type": "clip",
    "src": "../../episodes/ep01-capone/assets/clips/clip_ledger.mp4",
    "focus": 0.5,
-   "label": ["CICERO, ILLINOIS", "a gambling house's ledgers"]
+   "label": [
+    "CICERO, ILLINOIS",
+    "a gambling house's ledgers"
+   ]
   },
   {
    "at": "Page after page",
@@ -59,7 +74,9 @@
    "bg": "clips/clip_casino.mp4",
    "focus": 0.5,
    "dim": 0.72,
-   "lines": ["PROFITS SPLIT THREE WAYS"],
+   "lines": [
+    "PROFITS SPLIT THREE WAYS"
+   ],
    "big": "A · R · J",
    "big_at": 1.9,
    "big_label": "NO NAMES. JUST INITIALS."
@@ -88,7 +105,10 @@
    "type": "clip",
    "src": "clips/clip_hands.mp4",
    "focus": 0.5,
-   "label": ["HANDWRITING", "vs. bank deposit slips"]
+   "label": [
+    "HANDWRITING",
+    "vs. bank deposit slips"
+   ]
   },
   {
    "at": "A bookkeeper",
@@ -102,7 +122,10 @@
    "type": "clip",
    "src": "clips/clip_miami.mp4",
    "focus": 0.5,
-   "label": ["MIAMI", "early 1931"]
+   "label": [
+    "MIAMI",
+    "early 1931"
+   ]
   },
   {
    "at": "He agrees",
@@ -115,7 +138,10 @@
    "type": "clip",
    "src": "clips/clip_court.mp4",
    "focus": 0.5,
-   "label": ["OCTOBER 1931", "federal court, Chicago"],
+   "label": [
+    "OCTOBER 1931",
+    "federal court, Chicago"
+   ],
    "stamp": "GUILTY",
    "stamp_at": 3.5
   },
@@ -145,7 +171,7 @@
    "at": "Follow",
    "type": "end",
    "text": "The Hunt for\nAl Capone",
-   "sub": "Follow for part five"
+   "sub": "Follow for more"
   }
  ],
  "sources": [
@@ -159,21 +185,65 @@
  ],
  "elevenlabs": {
   "flow_id": "JEwlbDddA505fPjx9XGx",
-  "narration": {"session_id": "3UZnae8uydpDc65XXh0t", "generation_id": "iWftbt96YYF8skkXu5qM", "node_id": "wwOYvsgJDT2XeaLtziL8"},
-  "words": {"session_id": "RgxSXmBrCf7HEYGqH02Y", "generation_id": "7jLez0U6r8Lh1f7DTkFi"},
+  "narration": {
+   "session_id": "3UZnae8uydpDc65XXh0t",
+   "generation_id": "iWftbt96YYF8skkXu5qM",
+   "node_id": "wwOYvsgJDT2XeaLtziL8"
+  },
+  "words": {
+   "session_id": "RgxSXmBrCf7HEYGqH02Y",
+   "generation_id": "7jLez0U6r8Lh1f7DTkFi"
+  },
   "stills": {
-   "office": {"session_id": "y8scXr9feldcG2hgzlJH", "generation_id": "CTHhbWaT1gZJagLluRSZ"},
-   "hands": {"session_id": "ogu9KIiX2V5u7BGCDNqf", "generation_id": "OzNRCx0FEBynb8BPeMJV"},
-   "casino": {"session_id": "2SGrCS9cUWBp0k9ub7lf", "generation_id": "t6TZKgdXcpr2ll8i1uxR"},
-   "miami": {"session_id": "p52yHfUFzOr4PhSRhSHO", "generation_id": "VoAYoJXjjmGetDxiV2hE"},
-   "court": {"session_id": "eg9Xz4aZYFW2QiUv5BzT", "generation_id": "YIjI82UgyYGQ74SAkE3r"}
+   "office": {
+    "session_id": "y8scXr9feldcG2hgzlJH",
+    "generation_id": "CTHhbWaT1gZJagLluRSZ"
+   },
+   "hands": {
+    "session_id": "ogu9KIiX2V5u7BGCDNqf",
+    "generation_id": "OzNRCx0FEBynb8BPeMJV"
+   },
+   "casino": {
+    "session_id": "2SGrCS9cUWBp0k9ub7lf",
+    "generation_id": "t6TZKgdXcpr2ll8i1uxR"
+   },
+   "miami": {
+    "session_id": "p52yHfUFzOr4PhSRhSHO",
+    "generation_id": "VoAYoJXjjmGetDxiV2hE"
+   },
+   "court": {
+    "session_id": "eg9Xz4aZYFW2QiUv5BzT",
+    "generation_id": "YIjI82UgyYGQ74SAkE3r"
+   }
   },
   "clips": {
-   "clip_office": {"session_id": "Nle1pvC9NABCd1FSC7w0", "generation_id": "YnH1YApSuiUuLJ8KtHzv"},
-   "clip_hands": {"session_id": "k9JujCVF3sRqMZUk9kyC", "generation_id": "ChFYMPeO8ZJmARgYXYkq"},
-   "clip_casino": {"session_id": "FwnJTaQPGwwXlIMhbRkW", "generation_id": "FcR0Mu6XsIFUPkmFTC9N"},
-   "clip_miami": {"session_id": "SiORBCDVBGDOnKr90BBR", "generation_id": "9LbU4JJuDwGX8FQmFFr0"},
-   "clip_court": {"session_id": "uqYOt9ferzVm8VEPnuMm", "generation_id": "6B9rrUxWiWrjKDTi1nm9"}
+   "clip_office": {
+    "session_id": "Nle1pvC9NABCd1FSC7w0",
+    "generation_id": "YnH1YApSuiUuLJ8KtHzv"
+   },
+   "clip_hands": {
+    "session_id": "k9JujCVF3sRqMZUk9kyC",
+    "generation_id": "ChFYMPeO8ZJmARgYXYkq"
+   },
+   "clip_casino": {
+    "session_id": "FwnJTaQPGwwXlIMhbRkW",
+    "generation_id": "FcR0Mu6XsIFUPkmFTC9N"
+   },
+   "clip_miami": {
+    "session_id": "SiORBCDVBGDOnKr90BBR",
+    "generation_id": "9LbU4JJuDwGX8FQmFFr0"
+   },
+   "clip_court": {
+    "session_id": "uqYOt9ferzVm8VEPnuMm",
+    "generation_id": "6B9rrUxWiWrjKDTi1nm9"
+   }
+  },
+  "narration_tail_v2": {
+   "session_id": "B0iCfRqg8uiAWMScg4Dw",
+   "generation_id": "LUa6PYnwOjaNuJwKk8le",
+   "words_session_id": "vbtjj6yqYCQbZR4hvFkY",
+   "words_generation_id": "omE7qqJcFSUemoosTa8n",
+   "splice": "vo = original 0-62.62 s + tail from 1.73 s at -2.2 dB"
   }
  }
 }

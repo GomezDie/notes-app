@@ -1,11 +1,11 @@
 # 004 One line in a ledger
 
 **Hook (on screen):** CAPONE WENT DOWN FOR ONE LINE OF INK
-**Length:** ~68 s (narration 66 s)
+**Length:** ~67 s (narration 65 s). Revision 1 (2026-10-12): ending changed to "Follow for more" at the owner's request.
 **Series:** The Hunt for Al Capone, part 4
 
 ## Narration
-Chicago, nineteen thirty. Al Capone is the most famous gangster in America. But on paper, he barely exists. No bank accounts. No property in his own name. He pays for nearly everything in cash. So the Treasury sends in an accountant with a badge. Frank Wilson. Late one night, Wilson opens an old ledger from a Cicero gambling house. Page after page of profits, split between three men known only as A, R and J. Then one line stops him cold. Frank paid seventeen thousand five hundred for Al. For the first time, gambling money points straight at Capone. But who wrote it? Wilson compares the handwriting against bank deposit slips, until one matches. A bookkeeper named Leslie Shumway. Agents track him down in Miami. He's terrified of what Capone might do. He agrees to talk anyway. In October nineteen thirty-one, a jury finds Capone guilty of tax evasion. Eleven years. Not for murder. For one line in a ledger. Follow The History Between for part five.
+Chicago, nineteen thirty. Al Capone is the most famous gangster in America. But on paper, he barely exists. No bank accounts. No property in his own name. He pays for nearly everything in cash. So the Treasury sends in an accountant with a badge. Frank Wilson. Late one night, Wilson opens an old ledger from a Cicero gambling house. Page after page of profits, split between three men known only as A, R and J. Then one line stops him cold. Frank paid seventeen thousand five hundred for Al. For the first time, gambling money points straight at Capone. But who wrote it? Wilson compares the handwriting against bank deposit slips, until one matches. A bookkeeper named Leslie Shumway. Agents track him down in Miami. He's terrified of what Capone might do. He agrees to talk anyway. In October nineteen thirty-one, a jury finds Capone guilty of tax evasion. Eleven years. Not for murder. For one line in a ledger. Follow The History Between for more.
 
 ## Fact table
 | Claim | Source |
