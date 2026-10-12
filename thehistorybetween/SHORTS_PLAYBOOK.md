@@ -27,7 +27,9 @@ One run = handle what the owner decided on the Shorts Desk, then build ONE new 6
 - **pending** older than 6 days: mention it in the email ("still waiting for your review").
 
 ## 2. Pick the topic
-- Take the first unchecked line in `shorts/TOPICS.md`. Keep runs of a series together (e.g. the Capone set) so Shorts feed each other.
+- Take the first unchecked line in `shorts/TOPICS.md`.
+- **Two-Short limit (owner rule):** never make more than 2 Shorts in a row on the same topic or series. After 2, switch to a different topic. Check the last 2 rows of `shorts/LOG.md` before you pick. Skip anything under "Parked" in `TOPICS.md` unless the owner asks for it.
+- Part 2 of a topic may end with a cliffhanger to the next topic or a plain "Follow The History Between for more". Never promise a "part three".
 - At most one vidIQ call per run (credits are limited): `vidiq_outliers` with the topic keyword to confirm interest and borrow hook ideas. Skip if vidIQ balance < 20.
 
 ## 3. Research and script (65 s target)
