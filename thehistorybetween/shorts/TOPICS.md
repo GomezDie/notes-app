@@ -9,7 +9,7 @@ Take the first unchecked line. Owner rule: at most 2 Shorts in a row on one topi
 - [x] 004 "Frank paid $17,500 for Al": the ledger line that sank Capone (Frank J. Wilson, Leslie Shumway)
 
 ## Standalone
-- [ ] The Great Molasses Flood, Boston (Jan 15, 1919)
+- [x] 005 The Great Molasses Flood, Boston (Jan 15, 1919)
 - [ ] The Great Emu War, Australia (1932)
 - [ ] Tsutomu Yamaguchi: survived both atomic bombs (1945)
 - [ ] The Ghost Army: WWII's inflatable tanks

@@ -1,0 +1,265 @@
+{
+ "title": "Boston was hit by a wave of molasses. 21 died.",
+ "hook": "A WAVE OF MOLASSES\nKILLED 21 PEOPLE",
+ "voice": "vo.mp3",
+ "words": "words.json",
+ "music": "../../episodes/ep01-capone/assets/music_score.mp3",
+ "music_offset": 44.9,
+ "min_duration": 61.5,
+ "beats": [
+  {
+   "at": "Boston",
+   "type": "clip",
+   "src": "clips/clip_tank.mp4",
+   "focus": 0.5,
+   "label": [
+    "BOSTON · NORTH END",
+    "January 15, 1919"
+   ]
+  },
+  {
+   "at": "people in the North",
+   "type": "still",
+   "src": "stills/tank_b.png",
+   "focus": 0.5,
+   "label": [
+    "A STEEL TANK",
+    "on the waterfront"
+   ]
+  },
+  {
+   "at": "Then a sound",
+   "type": "flash"
+  },
+  {
+   "at": "It's rivets",
+   "type": "clip",
+   "src": "clips/clip_rivets.mp4",
+   "focus": 0.5
+  },
+  {
+   "at": "holding more",
+   "type": "stat",
+   "bg": "clips/clip_tank.mp4",
+   "focus": 0.5,
+   "dim": 0.7,
+   "lines": [
+    "ONE TANK"
+   ],
+   "big": "2,000,000+",
+   "big_at": 1.0,
+   "big_label": "GALLONS OF MOLASSES"
+  },
+  {
+   "at": "The tank splits",
+   "type": "flash"
+  },
+  {
+   "at": "A brown wave",
+   "type": "clip",
+   "src": "clips/clip_wave.mp4",
+   "focus": 0.5,
+   "label": [
+    "THE WAVE",
+    "up to 25 ft, by some accounts"
+   ]
+  },
+  {
+   "at": "rolls through",
+   "type": "stat",
+   "bg": "clips/clip_wave.mp4",
+   "focus": 0.5,
+   "dim": 0.72,
+   "big": "≈35",
+   "big_at": 1.4,
+   "big_label": "MILES PER HOUR"
+  },
+  {
+   "at": "It flattens",
+   "type": "clip",
+   "src": "clips/clip_after.mp4",
+   "focus": 0.5
+  },
+  {
+   "at": "It knocks",
+   "type": "card",
+   "bg": "clips/clip_after.mp4",
+   "focus": 0.5,
+   "dim": 0.72,
+   "kicker": "ENGINE 31",
+   "text": "A firehouse,\nknocked off its foundation"
+  },
+  {
+   "at": "People and horses",
+   "type": "still",
+   "src": "stills/after_a.png",
+   "focus": 0.5
+  },
+  {
+   "at": "As the winter",
+   "type": "card",
+   "kicker": "THE COLD",
+   "text": "It thickens\nas it cools."
+  },
+  {
+   "at": "anyone trapped",
+   "type": "clip",
+   "src": "clips/clip_after.mp4",
+   "focus": 0.55,
+   "dim": 0.2,
+   "label": [
+    "TRAPPED",
+    "rescuers waded in after them"
+   ]
+  },
+  {
+   "at": "Twenty-one",
+   "type": "stat",
+   "bg": "stills/after_a.png",
+   "focus": 0.5,
+   "dim": 0.78,
+   "big": "21",
+   "big_at": 0.1,
+   "big_label": "DEAD, INCLUDING CHILDREN"
+  },
+  {
+   "at": "About a hundred",
+   "type": "stat",
+   "bg": "stills/after_a.png",
+   "focus": 0.6,
+   "dim": 0.78,
+   "big": "≈150",
+   "big_at": 0.1,
+   "big_label": "INJURED"
+  },
+  {
+   "at": "The company blames",
+   "type": "card",
+   "kicker": "THE COMPANY'S STORY",
+   "text": "Anarchists.\nA bomb.",
+   "sub": "U.S. Industrial Alcohol"
+  },
+  {
+   "at": "But the tank",
+   "type": "clip",
+   "src": "clips/clip_buckets.mp4",
+   "focus": 0.5,
+   "label": [
+    "THE LEAKS",
+    "from the day it was filled"
+   ]
+  },
+  {
+   "at": "The company's fix",
+   "type": "still",
+   "src": "stills/tank_a.png",
+   "focus": 0.5,
+   "dim": 0.25,
+   "stamp": "PAINTED BROWN",
+   "stamp_at": 1.6
+  },
+  {
+   "at": "In nineteen",
+   "type": "still",
+   "src": "stills/hearing_a.png",
+   "focus": 0.6,
+   "label": [
+    "1925",
+    "court-appointed auditor"
+   ],
+   "stamp": "NO BOMB",
+   "stamp_at": 3.3
+  },
+  {
+   "at": "Just a bad",
+   "type": "clip",
+   "src": "clips/clip_rivets.mp4",
+   "focus": 0.5,
+   "dim": 0.35
+  },
+  {
+   "at": "Follow",
+   "type": "end",
+   "text": "The Great\nMolasses Flood",
+   "sub": "Follow for more"
+  }
+ ],
+ "sources": [
+  "https://en.wikipedia.org/wiki/Great_Molasses_Flood",
+  "https://www.britannica.com/event/Boston-Molasses-Disaster",
+  "https://www.history.com/articles/the-great-molasses-flood-of-1919",
+  "https://www.massmoments.org/moment-details.html?mid=19",
+  "https://www.livescience.com/56947-why-molasses-flood-1919-was-deadly.html",
+  "https://www.boston.com/news/history/2019/01/13/victims-great-boston-molasses-flood-1919/",
+  "https://www.sec.state.ma.us/divisions/state-house-tours/did-you-know/Molasses-Flood.htm",
+  "https://www.mentalfloss.com/history/bostons-great-molasses-flood-1919"
+ ],
+ "elevenlabs": {
+  "flow_id": "JEwlbDddA505fPjx9XGx",
+  "narration": {
+   "session_id": "1o4laVWeCtCXX4VwAAdB",
+   "generation_id": "GXFrG4DZ4sdVGg1mzG9s",
+   "node_id": "NhXrQDl2JhjS0lzVGozM"
+  },
+  "words": {
+   "session_id": "TcgIEJofP3knJgVeOeQH",
+   "generation_id": "Z9mMAr4QWX2ooEnpfbwx"
+  },
+  "stills": {
+   "tank_a": {
+    "session_id": "ljB7NiSpnPvnXsPoo8sD",
+    "generation_id": "ljHuYkxDb2FTbySxQgxY"
+   },
+   "tank_b": {
+    "session_id": "iAK0i0yQVIXuoGxfge0g",
+    "generation_id": "oRNaggds6YV64EXBuoze"
+   },
+   "rivets_a": {
+    "session_id": "4ythSjIZ0uDx9KKEpVGq",
+    "generation_id": "BjMHpp3wnUhuRXjwN7kB"
+   },
+   "wave_a": {
+    "session_id": "6mVFH2qyBDFGeOhy3qqp",
+    "generation_id": "OYcs8gChOTQ7XA0V8KD7"
+   },
+   "after_a": {
+    "session_id": "KW8K38PBpeZ94Fat71po",
+    "generation_id": "4d4bgs71t9XaRCp9Dikd"
+   },
+   "after_b": {
+    "session_id": "iWgf8HxBhnhcNbmt6rNK",
+    "generation_id": "VvSpaLaOPg3NOajIKnGC"
+   },
+   "buckets_a": {
+    "session_id": "1DJwuPU27vKNlj8fNPhQ",
+    "generation_id": "n7xNu4cJLTmUvTyN2fok"
+   },
+   "hearing_a": {
+    "session_id": "mzRhReNhSLlCoD10xHNZ",
+    "generation_id": "Aov7uW8KeAnrw1lb6xEI"
+   }
+  },
+  "clips": {
+   "clip_tank": {
+    "session_id": "qtLTJTvOjgfhudi7A9AQ",
+    "generation_id": "y3csH4bfPuB9c9ZNCuC4"
+   },
+   "clip_rivets": {
+    "session_id": "febgvIY7DVeuN58uw1fl",
+    "generation_id": "UBvQKqk8tWyWJ2Mu7Txl"
+   },
+   "clip_after": {
+    "session_id": "DFxYTEJacN1DgVGimeMX",
+    "generation_id": "oNdetGXXzFzpbVOgVLz3"
+   },
+   "clip_buckets": {
+    "session_id": "JkuL3ihhTMqCk28YQjup",
+    "generation_id": "V8ssojCwU0ncQEURlScP"
+   },
+   "clip_wave": {
+    "session_id": "Ksa6Kf4HeaLGNey6Dckk",
+    "generation_id": "q2MyPiqu8HrbDz3L6CN2"
+   }
+  }
+ }
+}
